@@ -14,24 +14,36 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <!-- JQuery Link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 
 <body>
 
+  <!-- Coupon popup code -->
+  <div class="coupon">
+    <img class="couponImg-center" src="images/homepage/coupon.jpg" alt="">
+    <button class="crossButton" onclick="closeCoupon()">&times;</button>
+</div>
+<!-- Real home page code -->
+  <div class="home">
   <!-- New Navbar code -->
   <div class="wrapper">
     <nav>
+      <!-- Dark mode button -->
+      <button onclick="myDark()" id="darkLight" class="darkMode">Dark mode</button>
+      <!-- ---------------- -->
       <input type="checkbox" id="show-search">
       <input type="checkbox" id="show-menu">
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
       <div class="content">
-      <div class="logo"><a href="#"><img src="images/homepage/logo.png" alt=""></a></div>
-        <ul class="links">
-          <li><a href="#">Home</a></li>
+      <div class="logo" id="logo"><a href="#"><img src="images/homepage/logo.png" alt=""></a></div>
+        <ul class="links mobileMenu">
+          <li><a href="#" id="navLinks">Home</a></li>
           
           <li>
-            <a href="#" class="desktop-link">Watches</a>
+            <a href="#" class="desktop-link navLinks">Watches</a>
             <input type="checkbox" id="show-features">
             <label for="show-features">Watches</label>
             <ul>
@@ -41,7 +53,7 @@
             </ul>
           </li>
           <li>
-            <a href="#" class="desktop-link">Collections</a>
+            <a href="#" class="desktop-link navLinks">Collections</a>
             <input type="checkbox" id="show-collections">
             <label for="show-collections">Collections</label>
             <ul>
@@ -50,8 +62,8 @@
               <li><a href="#">Luxury</a></li>
             </ul>
           </li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Cart</a></li>
+          <li><a href="#" class="navLinks">Login</a></li>
+          <li><a href="#" class="navLinks">Cart</a></li>
         </ul>
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
@@ -204,9 +216,9 @@
     <h1 class="text-center our-collections-head">OUR COLLECTIONS</h1>
 
     <ul class="our-collections">
-      <li><a data-toggle="tab" href="#men">MEN</a></li>
-      <li><a data-toggle="tab" href="#women">WOMEN</a></li>
-      <li><a data-toggle="tab" href="#luxury">LUXURY</a></li>
+      <li><a data-toggle="tab" href="#men" id="men" onclick="selectedCollection('MEN')">MEN</a></li>
+      <li><a data-toggle="tab" href="#women" onclick="selectedCollection('WOMEN')">WOMEN</a></li>
+      <li><a data-toggle="tab" href="#luxury" onclick="selectedCollection('LUXURY')">LUXURY</a></li>
     </ul>
 
     <div class="tab-content">
@@ -403,7 +415,7 @@
       deliver your products in fastest time possible. Experience the best in class online shopping with services such as
       Cash on Delivery, free shipping and seamless return/exchange policies.</p>
   </div>
-
+<hr>
   <footer class="foot-container">
     <div class="foot-content">
       <h5>CUSTOMER SERVICE</h5>
@@ -444,6 +456,8 @@
     <p class="text-center">Made with <i style="color:red; font-size:large; ">&hearts;</i> by Vinayak </p>
     <p class="text-center copy-right">Copyright &copy 2022 vinayakkadlennavar@gmail.com</p>
   </div>
+</div>
+<script src="index.js"></script>
 </body>
 
 </html>
