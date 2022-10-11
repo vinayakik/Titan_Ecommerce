@@ -600,7 +600,7 @@ nav .content .links {
   color: grey;
 }
 
-#men{  /*  we are explicitly changing the MEN color to black. bcz by default MEN is selected and this needs to be highlighted */
+#men1{  /*  we are explicitly changing the MEN color to black. bcz by default MEN is selected and this needs to be highlighted */
   color: black;
 }
 

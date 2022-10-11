@@ -69,9 +69,6 @@ function toggleText() { //toggleText function declaration
     }
 }
 
-
-
-
 // OUR COLLECTIONS- Below code is to highlight selected section heading(men,women,luxury)
 
 var collectionTabs = $(".our-collections li a"); //all the headers will be stored as array
