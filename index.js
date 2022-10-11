@@ -32,6 +32,8 @@ function toggleText() { //toggleText function declaration
         currentText.innerText = "Light mode";  //after clicking on button change the text to Light mode
         $(".wrapper").css("background-color", "black"); //to change the background color of the navbar using JQuery
         $(".fa, .fas").css("color", "white"); //to change the color of the search icon in the navbar using JQuery
+        $(".fa-long-arrow-alt-right").css("color", "black"); //to change the color of the go icon beside search bar in the navbar using JQuery
+
         $(".content .links ul").css("background-color", "black"); //to change the background color of sub-menu of navbar li's
         // Below code is to change the color of side navbar when screen is less than 900px
         // if ($(window).width() < 900) { //if you want to add js code for perticular range of screen width
