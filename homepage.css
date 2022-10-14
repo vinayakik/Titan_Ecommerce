@@ -11,9 +11,9 @@
 
 /* Below code is for coupon popup */
 
-
 .coupon{
   position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 2;
 }
@@ -588,6 +588,9 @@ nav .content .links {
   display: flex;
   justify-content: center;
 }
+.tab-content{
+  margin-bottom: 10px;
+}
 
 .our-collections>li {
   list-style: none;
@@ -669,9 +672,11 @@ nav .content .links {
   /* border: 2px solid red; */
   display: flex;
   border-top: 1px solid black;
-  padding-top: 1%;
+  padding-top: 1.5%;
+  margin-top: 10px;
 
 }
+
 
 .delivery-card {
   width: 30%;

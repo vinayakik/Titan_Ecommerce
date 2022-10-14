@@ -34,6 +34,11 @@ function toggleText() { //toggleText function declaration
         $(".fa, .fas").css("color", "white"); //to change the color of the search icon in the navbar using JQuery
         $(".fa-long-arrow-alt-right").css("color", "black"); //to change the color of the go icon beside search bar in the navbar using JQuery
 
+        $(".carousel-indicators li").css("border-color","black"); //to make carousal controls black
+        
+
+
+
         $(".content .links ul").css("background-color", "black"); //to change the background color of sub-menu of navbar li's
         // Below code is to change the color of side navbar when screen is less than 900px
         // if ($(window).width() < 900) { //if you want to add js code for perticular range of screen width
@@ -49,6 +54,8 @@ function toggleText() { //toggleText function declaration
 
         $(".card-content>a").css("color", "white"); //to change color of shop for section item names
         $(".our-collections li a").css("color", "white"); //to change color of our collection section headers
+
+        $(".delivery-container").css("border-top","1px solid white"); //to change color of top border for delivery section
     }
     else {
         currentText.innerText = "Dark mode"; //if light mode is selcted then, button text should show Dark Mode to select
@@ -60,6 +67,8 @@ function toggleText() { //toggleText function declaration
         $(".content .links li a").css("color", "black");// to change color of all the li's in navbar
         $(".content .links li label").css("color", "black");// to change color of all the li's in Side navbar
 
+        $(".carousel-indicators li").css("background-color","transparent"); //to make carousal controls white
+        $(".carousel-indicators li").css("border-color","white"); //to make carousal controls white
 
         $("#logo").html("<img src='images/homepage/logo.png' >");// to change the logo image in dark mode
 
@@ -67,6 +76,8 @@ function toggleText() { //toggleText function declaration
         $(".shop-container").css("color", "black"); //to change color of shop for section header
         $(".card-content>a").css("color", "black"); //to change color of shop for section item names
         $(".our-collections li a").css("color", "black");//to change color of our collection section headers
+
+        $(".delivery-container").css("border-top","1px solid black"); //to change color of top border for delivery section
 
     }
 }
@@ -117,3 +128,9 @@ function selectedCollection(selection) {  //function will get what is selected o
         }
     }
 }
+
+// to be on top of the page after refreshing the page
+
+$(document).ready(function(){
+    $(this).scrollTop(0);
+});
