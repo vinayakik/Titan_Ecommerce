@@ -122,6 +122,14 @@
   margin-left: 2%;
 }
 
+.location{
+  font-size:1rem; 
+  line-height: 0.5;
+}
+.darklocation{
+  color: white;
+}
+
 .wrapper {
   background: #fff;
   /* position: fixed; */

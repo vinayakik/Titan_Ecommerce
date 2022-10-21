@@ -46,6 +46,7 @@ function toggleText() { //toggleText function declaration
         $(".content .links li a").css("color", "white"); // to change color of all the li's in navbar
         $(".content .links li label").css("color", "white"); // to change color of all the li's in Side navbar
         // }
+        $(".location").css("color","white");  //Geo location to be shown in white color when we switch to dark mode
 
         $("#logo").html("<img src='images/homepage/logo_dark.png' >"); // to change the logo image in dark mode
 
@@ -62,7 +63,9 @@ function toggleText() { //toggleText function declaration
         $(".wrapper").css("background-color", "white");//to change the background color of the navbar using JQuery
         $(".fa, .fas").css("color", "black"); //to change the color of the search icon in the navbar using JQuery
         $(".content .links ul").css("background-color", "white");//to change the background color of sub-menu of navbar li's
+        $(".location").css("color","black");  //Geo location to be shown in white color when we switch to light mode
         
+
         $(".mobileMenu").css("background-color", "white");// to change background color of all the li's in navbar
         $(".content .links li a").css("color", "black");// to change color of all the li's in navbar
         $(".content .links li label").css("color", "black");// to change color of all the li's in Side navbar
@@ -128,6 +131,48 @@ function selectedCollection(selection) {  //function will get what is selected o
         }
     }
 }
+
+//Geo code location code to show fetch and show the location
+
+myLocation();  //function calling
+            let x = document.getElementById('out');
+            let y = document.getElementById('weatherOut');
+            function myLocation(){ //function to check whether device support navigation
+                if(navigator.geolocation){ //condition to check whether device support navigation
+                    navigator.geolocation.getCurrentPosition(showPosition) //getCurrentPosition() method is used to return user position. It will pass the position details into showPosition
+                }else{
+                    x.innerText = "Geo Not Supported" //message if device not support navigation
+                }
+            }
+
+            function showPosition(data){ //function to show the position. data parameter will have lat, longitude and other info
+                // console.log(data) //printing position details
+                let lat = data.coords.latitude; //storing latitude
+                let long = data.coords.longitude; //storing longitude
+                // x.innerText = `Latitude is ${lat} and longitude is ${long}` //if you want to print lat,long
+                const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${long}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`; //weather API to get the city name, weather and other info
+        
+                //api calling. fetch() will help to call the API
+                fetch(url,{method: 'GET'}) //we use {method: 'GET'} to get the object attributes from API
+
+                // return promise. when we use ".then" 1st time, we get promise.
+                .then((res) => res.json())
+
+                // resolve promise. when we use ".then" 2nd time, we get data
+                .then((data) => { //data is the information we get from API. Includes city name, weather and other info
+                    // console.log(data) //to print the data
+                    let cityName = data.city.name; //to get the city name from data
+                    let temp = data.list[0].temp.day;//to get the temp from data
+                    x.innerHTML = cityName+ "<br>"; // to print city name we are manipulating the DOM
+                    y.innerHTML = temp +"°C";// to print temperature we are manipulating the DOM
+                })
+
+                //.catch - will help to get the error if any
+                .catch((err) => {
+                    console.log(err)
+                })
+
+            }
 
 // to be on top of the page after refreshing the page
 
